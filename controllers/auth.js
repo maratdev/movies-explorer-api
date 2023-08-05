@@ -7,7 +7,7 @@ const { CREATED } = require('../errors/statusCode');
 const { JWT_TOKEN_EXPIRES, COOKIE_MAX_AGE } = require('../util/constants');
 
 const {
-  NODE_ENV, JWT_SECRET, COOKIE_SAMESITE, COOKIE_SECURE,
+  NODE_ENV, JWT_SECRET,
 } = process.env;
 
 
@@ -19,11 +19,14 @@ const createUser = (req, res, next) => {
   } = req.body;
   const newUser = new User({
     name, email, password,
-  });
+  })
   newUser
     .save()
     .then((result) => {
-      res.status(CREATED).json(result);
+      res.status(CREATED).send({
+        email: result.email,
+        name: result.name,
+      });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

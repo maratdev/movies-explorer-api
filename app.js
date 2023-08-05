@@ -1,21 +1,19 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const {
-  getCurrentUser,
-} = require('./controllers/users-controller');
-const {
-  createUser,
-  login,
-} = require('./controllers/auth');
-
-const { PORT = process.env.PORT || 3000, DB = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
+const router = require('./routes');
+const { login, createUser } = require('./controllers/auth');
+const { validationCreateUser, validationLogin } = require('./middlewares/validation');
 const app = express();
 app.use(express.json());
 
-app.get('/users/me', getCurrentUser);
-app.post('/signup', createUser);
-app.post('/signin', login);
+const { PORT = process.env.PORT || 3000, DB = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
+
+// Добавление данных / роутинги
+
+app.post('/signup', validationCreateUser, createUser);
+app.post('/signin', validationLogin, login);
+app.use(router);
 
 mongoose
   .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })

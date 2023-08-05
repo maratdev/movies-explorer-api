@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
+const { isEmail } = require('validator');
 const bcrypt = require('bcryptjs');
 const UnauthorizedError = require('../errors/UnauthorizedError');
 
@@ -7,18 +7,18 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
+      required: true,
       minlength: 2,
       maxlength: 30,
     },
 
     email: {
       type: String,
+      trim: true,
+      lowercase: true,
       required: true,
       unique: true,
-      validate: {
-        validator: (email) => validator.isEmail(email),
-        message: 'Неправильный формат почты',
-      },
+      validate: { validator: isEmail , message: 'Неверный формат почты' }
     },
     password: {
       type: String,
@@ -26,15 +26,9 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
   },
+  { versionKey: false }
 );
 
-userSchema.set('toJSON', {
-  transform: (doc, ret) => {
-    const data = ret;
-    delete data.password;
-    return data;
-  },
-});
 
 userSchema.statics.findUserByCredentials = function (email, password) {
   return this.findOne({ email }).select('+password')
