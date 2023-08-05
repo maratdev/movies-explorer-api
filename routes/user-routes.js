@@ -7,5 +7,4 @@ const {
 // Получить данные о всех пользователях
 router.get('/users/me', getCurrentUser);
 
-
 module.exports = router;

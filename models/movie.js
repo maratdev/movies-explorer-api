@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const movieSchema  = new Schema({
+const movieSchema = new Schema({
   country: {
     type: String,
     require: true,
@@ -14,7 +14,7 @@ const movieSchema  = new Schema({
   },
   duration: {
     hours: Number,
-    minutes: Number
+    minutes: Number,
   },
   year: {
     type: String,
@@ -67,7 +67,7 @@ const movieSchema  = new Schema({
     require: true,
   },
 
-})
+});
 
-const Movie = mongoose.model('Movie', movieSchema)
+const Movie = mongoose.model('Movie', movieSchema);
 module.exports = Movie;
