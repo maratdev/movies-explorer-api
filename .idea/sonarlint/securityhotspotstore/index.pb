@@ -6,5 +6,3 @@
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 =
 .editorconfig,6\2\626a747c8694eaae66f2afb3d1a745b045782c70
-9
-	.eslintrc,4\b\4be5f5e3cea171c304090be92469b2f2cb51039a

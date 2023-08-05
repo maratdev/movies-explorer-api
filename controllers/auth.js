@@ -4,12 +4,11 @@ const User = require('../models/user');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 const { CREATED } = require('../errors/statusCode');
-const { JWT_TOKEN_EXPIRES, COOKIE_MAX_AGE } = require('../util/constants');
+const { JWT_TOKEN_EXPIRES } = require('../util/constants');
 
 const {
   NODE_ENV, JWT_SECRET,
 } = process.env;
-
 
 // Создаёт пользователя
 const createUser = (req, res, next) => {
@@ -19,7 +18,7 @@ const createUser = (req, res, next) => {
   } = req.body;
   const newUser = new User({
     name, email, password,
-  })
+  });
   newUser
     .save()
     .then((result) => {
@@ -52,8 +51,5 @@ const login = (req, res, next) => {
 
 module.exports = {
   createUser,
-  login
+  login,
 };
-
-
-

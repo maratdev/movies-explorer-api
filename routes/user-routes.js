@@ -7,7 +7,6 @@ const {
 
 // Получить данные о пользователе
 router.get('/me', getCurrentUser);
-router.patch('/me',validationUpdateUser, updateUser);
-
+router.patch('/me', validationUpdateUser, updateUser); // обновляет информацию о пользователе (email и name)
 
 module.exports = router;

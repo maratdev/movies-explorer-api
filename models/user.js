@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       required: true,
       unique: true,
-      validate: { validator: isEmail , message: 'Неверный формат почты' }
+      validate: { validator: isEmail, message: 'Неверный формат почты' },
     },
     password: {
       type: String,
@@ -26,10 +26,10 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
-
+// eslint-disable-next-line func-names
 userSchema.statics.findUserByCredentials = function (email, password) {
   return this.findOne({ email }).select('+password')
     .then((user) => {
@@ -46,7 +46,6 @@ userSchema.statics.findUserByCredentials = function (email, password) {
         });
     });
 };
-
 
 const User = mongoose.model('user', userSchema);
 module.exports = User;

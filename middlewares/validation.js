@@ -25,6 +25,4 @@ module.exports.validationUpdateUser = celebrate({
   }),
 });
 
-
 // ---------------------------------------- Movies --------------------------- /
-

@@ -5,7 +5,7 @@ const { OK, handleResult } = require('../errors/statusCode');
 
 // Получить данные пользователе
 const getCurrentUser = (req, res, next) => {
-  User.findById(req.user._id, { _id: 0 , __v: 0})
+  User.findById(req.user._id, { _id: 0, __v: 0 })
     .then((user) => handleResult(res, user))
     .catch(next);
 };
@@ -32,5 +32,5 @@ const updateUser = (req, res, next) => {
 
 module.exports = {
   getCurrentUser,
-  updateUser
+  updateUser,
 };
