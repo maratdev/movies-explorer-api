@@ -2,10 +2,12 @@ const Movie = require('../models/movie');
 const BadRequestError = require('../errors/BadRequestError');
 const { CREATED, handleResult } = require('../errors/statusCode');
 // Получить данные о всех фильмах
+
 const getMovies = (req, res, next) => {
+  const owner = req.user._id;
   Movie
-    .find()
-    .then((cards) => handleResult(res, cards))
+    .find({ owner })
+    .then((movies) => handleResult(res, movies))
     .catch(next);
 };
 
@@ -13,8 +15,9 @@ const getMovies = (req, res, next) => {
 const createMovie = (req, res, next) => {
   const {
     country, director, duration, year, description,
-    image, trailerLink, thumbnail, owner, movieId, nameRU, nameEN,
+    image, trailerLink, thumbnail, movieId, nameRU, nameEN,
   } = req.body;
+  const owner = req.user._id;
   const newMovie = new Movie({
     country,
     director,
