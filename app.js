@@ -6,11 +6,15 @@ const { errors } = require('celebrate');
 const { login, createUser } = require('./controllers/auth');
 const { validationCreateUser, validationLogin } = require('./middlewares/validation');
 const { serverLog } = require('./middlewares/serverlog');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const router = require('./routes');
 
 const app = express();
 app.use(express.json());
+
+// подключаем логгер запросов
+app.use(requestLogger);
 
 // Добавление данных / роутинги
 app.post('/signup', validationCreateUser, createUser);
@@ -18,6 +22,7 @@ app.post('/signin', validationLogin, login);
 app.use(router);
 
 // Здесь обрабатываем все ошибки
+app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
 app.use(serverLog);
 
