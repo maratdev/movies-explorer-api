@@ -1,24 +1,28 @@
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
-
 const { errors } = require('celebrate');
-const { login, createUser } = require('./controllers/auth');
-const { validationCreateUser, validationLogin } = require('./middlewares/validation');
+const helmet = require('helmet');
+const limiter = require('./middlewares/rateLimit');
 const { serverLog } = require('./middlewares/serverlog');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-
+const { CORS_OPTIONS } = require('./middlewares/cors');
 const router = require('./routes');
 
 const app = express();
+// динамическое ограничение скорости
+app.use(helmet());
+app.use(limiter);
+app.use(cors(CORS_OPTIONS));
+
+// чтение тело запросов
 app.use(express.json());
 
 // подключаем логгер запросов
 app.use(requestLogger);
 
 // Добавление данных / роутинги
-app.post('/signup', validationCreateUser, createUser);
-app.post('/signin', validationLogin, login);
 app.use(router);
 
 // Здесь обрабатываем все ошибки

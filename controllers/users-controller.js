@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
+const ConflictError = require('../errors/ConflictError');
 const { OK, handleResult } = require('../errors/statusCode');
 
 // Получить данные пользователе
@@ -21,9 +22,14 @@ const updateUser = (req, res, next) => {
       }
       res.status(OK).json(result);
     })
+
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Переданы некорректные данные при обновлении профиля.'));
+        return;
+      }
+      if (err.code === 11000) {
+        next(new ConflictError('Такой пользователь уже существует'));
         return;
       }
       next(err);
