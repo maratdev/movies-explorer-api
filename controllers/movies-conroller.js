@@ -9,6 +9,7 @@ const getMovies = (req, res, next) => {
   const owner = req.user._id;
   Movie
     .find({ owner })
+    .populate(['owner'])
     .then((movies) => handleResult(res, movies))
     .catch(next);
 };
@@ -19,7 +20,6 @@ const createMovie = (req, res, next) => {
     country, director, duration, year, description,
     image, trailerLink, thumbnail, movieId, nameRU, nameEN,
   } = req.body;
-  const owner = req.user._id;
   const newMovie = new Movie({
     country,
     director,
@@ -29,7 +29,7 @@ const createMovie = (req, res, next) => {
     image,
     trailerLink,
     thumbnail,
-    owner,
+    owner: req.user._id,
     movieId,
     nameRU,
     nameEN,
@@ -61,10 +61,10 @@ const deleteMovie = (req, res, next) => {
       return Movie.findByIdAndRemove(movieId).then(() => res.send({ message: 'Карточка успешно удалена' }));
     })
     .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new BadRequestError('Некорректные данные _id'));
+      if (err.name === 'CastError' || err.name === 'ValidationError') {
+        return next(new BadRequestError('Некорректные данные или _id'));
       }
-      next(err);
+      return next(err);
     });
 };
 

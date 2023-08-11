@@ -15,7 +15,7 @@ const getCurrentUser = (req, res, next) => {
 const updateUser = (req, res, next) => {
   const { name, email } = req.body;
   User
-    .findByIdAndUpdate(req.user._id, { name, email }, { new: true, runValidators: true })
+    .findByIdAndUpdate(req.user._id, { name, email }, { _id: 0, new: true, runValidators: true })
     .then((result) => {
       if (!result) {
         throw new NotFoundError('Пользователь по указанному _id не найден.');
@@ -25,14 +25,12 @@ const updateUser = (req, res, next) => {
 
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new BadRequestError('Переданы некорректные данные при обновлении профиля.'));
-        return;
+        return next(new BadRequestError('Переданы некорректные данные при обновлении профиля.'));
       }
       if (err.code === 11000) {
-        next(new ConflictError('Такой пользователь уже существует'));
-        return;
+        return next(new ConflictError('Этот email занят'));
       }
-      next(err);
+      return next(err);
     });
 };
 

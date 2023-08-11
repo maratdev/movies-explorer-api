@@ -1,7 +1,7 @@
 const { celebrate, Joi } = require('celebrate');
 
 // ---------------------------------------- Users --------------------------- /
-// авторизация
+// регистрация
 module.exports.validationCreateUser = celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
@@ -27,7 +27,7 @@ module.exports.validationUpdateUser = celebrate({
 
 // ---------------------------------------- Movies --------------------------- /
 
-// создание карточки
+// создание фильма
 module.exports.validationCreateMovie = celebrate({
   body: Joi.object().keys({
     country: Joi.string().required(),

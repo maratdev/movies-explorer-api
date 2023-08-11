@@ -11,16 +11,16 @@ const { CORS_OPTIONS } = require('./middlewares/cors');
 const router = require('./routes');
 
 const app = express();
+// подключаем логгер запросов
+app.use(requestLogger);
+// CORS
+app.use(cors(CORS_OPTIONS));
 // динамическое ограничение скорости
 app.use(helmet());
 app.use(limiter);
-app.use(cors(CORS_OPTIONS));
 
 // чтение тело запросов
 app.use(express.json());
-
-// подключаем логгер запросов
-app.use(requestLogger);
 
 // Добавление данных / роутинги
 app.use(router);
