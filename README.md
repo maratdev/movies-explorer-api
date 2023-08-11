@@ -54,7 +54,7 @@
 
 
 IP <a href="http://158.160.66.2/" target="_blank" rel="noreferrer">158.160.66.2</a>  
-Backend <a href="https://api.nomoredomains.xyz/" target="_blank" rel="noreferrer">https://api.nomoredomains.xyz</a>
+Backend <a href="https://api.voredev.nomoreparties.co/" target="_blank" rel="noreferrer">api.voredev.nomoreparties.co</a>
 
 
 Репозиторий:

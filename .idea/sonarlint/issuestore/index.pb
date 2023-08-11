@@ -3,8 +3,6 @@
 .editorconfig,6\2\626a747c8694eaae66f2afb3d1a745b045782c70
 D
 errors/statusCode.js,c\5\c50abe6972a19e1b435e3c317c930bc262672b07
-E
-routes/user-routes.js,c\0\c0e649c69baf24cf9769c1183392717a06e78236
 A
 util/constants.js,e\7\e7dee08a7ca0e04fe94db329a777eb0f551d0d09
 H
@@ -19,16 +17,10 @@ G
 request.log,d\6\d6e170011864588215f61419b7a577d888e593fe
 H
 middlewares/rateLimit.js,f\1\f1e06ba9f1aafbf4f6671d4ff62061bdb41cf620
-C
-middlewares/cors.js,3\c\3cc825f029d0793ff7bdd462574a809469208320
-4
-.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 9
 	error.log,d\f\df4ae8a3792e8b71e8bac2f2cf214705a6781af7
 F
 routes/movie-routes.js,c\d\cdbe07f4e2e5480a2679a20061fca789706c0210
-I
-middlewares/validation.js,7\5\757bd77e4c85c373cf23c0c30121026335b6d173
 E
 middlewares/logger.js,e\4\e4d526de1f6bbaede5bf753b46f3d175849e00e4
 ?
