@@ -1,29 +1,22 @@
 
 =
 .editorconfig,6\2\626a747c8694eaae66f2afb3d1a745b045782c70
-D
-errors/statusCode.js,c\5\c50abe6972a19e1b435e3c317c930bc262672b07
-A
-util/constants.js,e\7\e7dee08a7ca0e04fe94db329a777eb0f551d0d09
-H
-middlewares/serverlog.js,0\3\03d17b9fc6f4057533127cdf02fd0fcf0fc4b200
->
-models/user.js,5\8\58952233992370efa7ea98b3ec60c43d2d227d89
-9
-	.eslintrc,4\b\4be5f5e3cea171c304090be92469b2f2cb51039a
-G
-errors/ConflictError.js,b\4\b45503ef7411f18941cb166e2ac3c4f3aee9b32e
 H
 middlewares/rateLimit.js,f\1\f1e06ba9f1aafbf4f6671d4ff62061bdb41cf620
 ;
 request.log,d\6\d6e170011864588215f61419b7a577d888e593fe
 9
 	error.log,d\f\df4ae8a3792e8b71e8bac2f2cf214705a6781af7
-C
-middlewares/auth.js,6\e\6ef1f1734a4970e0bcd86633dd049a66965633e3
-?
-routes/index.js,3\0\30dfc417d69af8ed298ed4111dcab68f38ca7f54
-E
-middlewares/logger.js,e\4\e4d526de1f6bbaede5bf753b46f3d175849e00e4
 F
 routes/movie-routes.js,c\d\cdbe07f4e2e5480a2679a20061fca789706c0210
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+E
+routes/user-routes.js,c\0\c0e649c69baf24cf9769c1183392717a06e78236
+C
+middlewares/cors.js,3\c\3cc825f029d0793ff7bdd462574a809469208320
+C
+middlewares/auth.js,6\e\6ef1f1734a4970e0bcd86633dd049a66965633e3

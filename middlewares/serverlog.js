@@ -13,6 +13,4 @@ const serverLog = (err, req, res, next) => {
   next();
 };
 
-module.exports = {
-  serverLog,
-};
+module.exports = serverLog;
