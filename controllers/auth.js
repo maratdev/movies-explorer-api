@@ -5,6 +5,7 @@ const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
 const { CREATED } = require('../errors/statusCode');
 const { JWT_TOKEN_EXPIRES } = require('../util/constants');
+const { invalidDataError, duplicateEmailError } = require('../errors/error-texts');
 
 const {
   NODE_ENV, JWT_SECRET,
@@ -29,9 +30,9 @@ const createUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        next(new BadRequestError('Переданы некорректные данные при создании пользователя.'));
+        next(new BadRequestError(invalidDataError));
       } else if (err.code === 11000) {
-        next(new ConflictError('Такой пользователь уже существует!'));
+        next(new ConflictError(duplicateEmailError));
       } else {
         next(err);
       }
