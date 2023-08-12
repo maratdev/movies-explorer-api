@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const { wrongLinkFormat } = require('../errors/error-texts');
 
 const { Schema } = mongoose;
 
@@ -13,8 +14,8 @@ const movieSchema = new Schema({
     require: true,
   },
   duration: {
-    hours: Number,
-    minutes: Number,
+    type: Number,
+    required: true,
   },
   year: {
     type: String,
@@ -29,7 +30,7 @@ const movieSchema = new Schema({
     require: true,
     validate: {
       validator: (image) => validator.isURL(image),
-      message: 'Неправильный формат ссылки',
+      message: wrongLinkFormat,
     },
   },
   trailerLink: {
@@ -37,7 +38,7 @@ const movieSchema = new Schema({
     require: true,
     validate: {
       validator: (trailerLink) => validator.isURL(trailerLink),
-      message: 'Неправильный формат ссылки',
+      message: wrongLinkFormat,
     },
   },
   thumbnail: {
@@ -45,7 +46,7 @@ const movieSchema = new Schema({
     require: true,
     validate: {
       validator: (thumbnail) => validator.isURL(thumbnail),
-      message: 'Неправильный формат ссылки',
+      message: wrongLinkFormat,
     },
   },
   owner: {
