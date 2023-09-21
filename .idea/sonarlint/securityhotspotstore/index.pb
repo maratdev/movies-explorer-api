@@ -10,3 +10,45 @@ G
 errors/ConflictError.js,b\4\b45503ef7411f18941cb166e2ac3c4f3aee9b32e
 H
 errors/ForbiddenError.js,b\9\b944c585f4a81e6817a6e1cb5eed4705422da57c
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+9
+	.eslintrc,4\b\4be5f5e3cea171c304090be92469b2f2cb51039a
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+A
+util/constants.js,e\7\e7dee08a7ca0e04fe94db329a777eb0f551d0d09
+D
+errors/statusCode.js,c\5\c50abe6972a19e1b435e3c317c930bc262672b07
+C
+middlewares/cors.js,3\c\3cc825f029d0793ff7bdd462574a809469208320
+E
+middlewares/logger.js,e\4\e4d526de1f6bbaede5bf753b46f3d175849e00e4
+H
+middlewares/rateLimit.js,f\1\f1e06ba9f1aafbf4f6671d4ff62061bdb41cf620
+H
+middlewares/serverlog.js,0\3\03d17b9fc6f4057533127cdf02fd0fcf0fc4b200
+?
+models/movie.js,5\5\550793759d37da3b1960c9a1246178be2ca58df6
+F
+routes/movie-routes.js,c\d\cdbe07f4e2e5480a2679a20061fca789706c0210
+E
+routes/user-routes.js,c\0\c0e649c69baf24cf9769c1183392717a06e78236
+O
+controllers/users-controller.js,4\1\41205207224eae51e7ff02514d5f9755384706cb
+O
+controllers/movies-conroller.js,5\3\5366d185dcc5f646360e32b951afef30a6d22912
+I
+middlewares/validation.js,7\5\757bd77e4c85c373cf23c0c30121026335b6d173
+>
+models/user.js,5\8\58952233992370efa7ea98b3ec60c43d2d227d89
+E
+errors/error-texts.js,f\0\f08aec03182f4e98cb693838adc7d7ae9095eb11
+C
+middlewares/auth.js,6\e\6ef1f1734a4970e0bcd86633dd049a66965633e3
+?
+routes/index.js,3\0\30dfc417d69af8ed298ed4111dcab68f38ca7f54
+6
+app.js,4\a\4a68969ef8e858229267b842dedf42ab5dde4d50
+C
+controllers/auth.js,5\6\56609b69a7df4a57c2e9648d6bf2def90b61a640
