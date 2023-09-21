@@ -7,7 +7,7 @@ const { userIdNotFound, duplicateEmailError, invalidDataError } = require('../er
 
 // Получить данные пользователе
 const getCurrentUser = (req, res, next) => {
-  User.findById(req.user._id, { _id: 0, __v: 0 })
+  User.findById(req.user._id, { __v: 0 })
     .then((user) => handleResult(res, user))
     .catch(next);
 };
