@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 const limiter = require('./middlewares/rateLimit');
 const serverLog = require('./middlewares/serverlog');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -11,7 +13,10 @@ const { CORS_OPTIONS } = require('./middlewares/cors');
 const { DB_DEV } = require('./util/constants');
 const router = require('./routes');
 
-const app = express();
+const swaggerDocument = require('./swagger/openapi');
+
+const app = express() || express.Router;
+
 // подключаем логгер запросов
 app.use(requestLogger);
 // CORS
@@ -23,6 +28,10 @@ app.use(limiter);
 // чтение тело запросов
 app.use(express.json());
 
+const specs = swaggerJsdoc(swaggerDocument);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+  explorer: true,
+}));
 // Добавление данных / роутинги
 app.use(router);
 

@@ -24,3 +24,23 @@ E
 errors/error-texts.js,f\0\f08aec03182f4e98cb693838adc7d7ae9095eb11
 4
 .env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+D
+errors/statusCode.js,c\5\c50abe6972a19e1b435e3c317c930bc262672b07
+E
+middlewares/logger.js,e\4\e4d526de1f6bbaede5bf753b46f3d175849e00e4
+E
+routes/user-routes.js,c\0\c0e649c69baf24cf9769c1183392717a06e78236
+I
+middlewares/validation.js,7\5\757bd77e4c85c373cf23c0c30121026335b6d173
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+B
+swagger/openapi.js,a\9\a97119d825113bbac518a0616c7b17c8e56d1cd4
+F
+routes/movie-routes.js,c\d\cdbe07f4e2e5480a2679a20061fca789706c0210
+?
+models/movie.js,5\5\550793759d37da3b1960c9a1246178be2ca58df6
+O
+controllers/movies-conroller.js,5\3\5366d185dcc5f646360e32b951afef30a6d22912
+G
+errors/NotFoundError.js,5\2\520f1346255669544b3b524970cec39c4a182370
