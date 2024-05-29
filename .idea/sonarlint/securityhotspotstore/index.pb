@@ -44,3 +44,5 @@ O
 controllers/movies-conroller.js,5\3\5366d185dcc5f646360e32b951afef30a6d22912
 G
 errors/NotFoundError.js,5\2\520f1346255669544b3b524970cec39c4a182370
+C
+middlewares/cors.js,3\c\3cc825f029d0793ff7bdd462574a809469208320
