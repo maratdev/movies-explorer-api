@@ -1,6 +1,6 @@
 # Backend приложения проекта Movies-explorer
 
-_***Проект представляет из себя API для проекта:***_  [Movies Explorer](https://voredev.nomoredomainsrocks.ru/)
+_***Проект представляет из себя API для проекта:***_ [Movies Explorer](https://github.com/maratdev/movies-explorer-frontend)
 
 ## Технологии:
   <a href="https://expressjs.com/ru/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/-Express-090909?style=for-the-badge&logo=Express" alt="Express" /></a>
@@ -53,8 +53,8 @@ _***Проект представляет из себя API для проект�
 
 ### Ссылки на проект
 
-IP <a href="http://158.160.66.2/" target="_blank" rel="noreferrer">158.160.66.2</a>  
-Backend <a href="https://api.voredev.nomoreparties.co/" target="_blank" rel="noreferrer">api.voredev.nomoreparties.co</a>
+IP <a href="http://5.35.84.174/" target="_blank" rel="noreferrer">5.35.84.174</a>  
+Frontend <a href="https://explorer-movies.ru/" target="_blank" rel="noreferrer">explorer-movies.ru</a>
 
 
 Репозиторий:
