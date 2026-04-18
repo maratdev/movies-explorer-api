@@ -19,6 +19,19 @@ const app = express() || express.Router;
 
 // подключаем логгер запросов
 app.use(requestLogger);
+// Proxy
+app.set('trust proxy', 1);
+
+app.use((req, res, next) => {
+  console.log('[REQ]', {
+    method: req.method,
+    url: req.originalUrl,
+    ip: req.ip,
+    xff: req.headers['x-forwarded-for'],
+    ua: req.headers['user-agent'],
+  });
+  next();
+});
 // CORS
 app.use(cors(CORS_OPTIONS));
 // динамическое ограничение скорости
