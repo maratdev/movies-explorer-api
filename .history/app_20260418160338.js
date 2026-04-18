@@ -32,9 +32,6 @@ const specs = swaggerJsdoc(swaggerDocument);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
   explorer: true,
 }));
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
 // Добавление данных / роутинги
 app.use(router);
 

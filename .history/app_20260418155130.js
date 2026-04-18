@@ -32,9 +32,6 @@ const specs = swaggerJsdoc(swaggerDocument);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
   explorer: true,
 }));
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
 // Добавление данных / роутинги
 app.use(router);
 
@@ -44,7 +41,7 @@ app.use(errors());
 app.use(serverLog);
 
 // ----------------------------------- Настройки сервера и БД --------------------------------/
-const { NODE_ENV, DB, PORT } = process.env;
+const { NODE_ENV, DB, PORT = 3000 } = process.env;
 
 mongoose.connect(NODE_ENV === 'production' ? DB : DB_DEV, { useNewUrlParser: true, useUnifiedTopology: true });
 app.listen(PORT);

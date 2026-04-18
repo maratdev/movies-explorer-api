@@ -47,4 +47,5 @@ app.use(serverLog);
 const { NODE_ENV, DB, PORT } = process.env;
 
 mongoose.connect(NODE_ENV === 'production' ? DB : DB_DEV, { useNewUrlParser: true, useUnifiedTopology: true });
+console.log(PORT);
 app.listen(PORT);
